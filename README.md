@@ -56,17 +56,23 @@ The repository has the following file structure:
     ├── utility.py
 ```
 
-### Notebook Contents:
-* _01_EDA_
-  * Performs an exploratory data analysis (EDA) using the library [Sweetviz](https://github.com/fbdesignpro/sweetviz)
-* _02_Preprocessing_
-  * Performs some data preprocessing steps, and
-  * Does feature importance analysis
-* _03_Modeling_
-  * Encodes categorical features
-  * Allows to build, select and evaluate models
-  * Performs model hyperparameter tuning
-  * Saves the selected model using BentoML
+### Directory contents:
+* _/model_:
+  * contains only the local model, identical to the deployed one
+* _/src_:
+  * contains user defined functions (utility.py), config files and some python scripts
+* _/notebooks_
+  * _01_EDA.ipynb_
+    * Performs an exploratory data analysis (EDA) using the library [Sweetviz](https://github.com/fbdesignpro/sweetviz)
+  * _02_Preprocessing.ipynb_
+    * Performs some data preprocessing steps, and
+    * Does feature importance analysis
+  * _03_Modeling.ipynb_
+    * Encodes categorical features
+    * Allows to build, select and evaluate models
+    * Performs model hyperparameter tuning
+    * Saves the selected model using BentoML
+
 
 > Note: It's recommended to open the notebook _01_EDA_ with https://nbviewer.org/ otherwise you won't be able to visualize the EDA. 
 
