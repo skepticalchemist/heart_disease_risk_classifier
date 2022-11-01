@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# my files/dir
+data
+notebooks/.ipynb_checkpoints
+
 # C extensions
 *.so
 

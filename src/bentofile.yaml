@@ -1,0 +1,10 @@
+service: "service.py:svc"
+labels:
+  owner: smv
+  project: midterm_project 
+include:
+- "*.py"
+python:
+  packages:
+    - sklearn
+    - xgboost
