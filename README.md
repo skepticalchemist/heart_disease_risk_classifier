@@ -86,7 +86,19 @@ The repository has the following file structure:
 ```
 
 * Inside the repository create a new directory called `data` and manually download this [Kaggle](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease) dataset to it.
-
+* Run and inspect all notebooks from 01 to 03
+* The best model is saved on notebook 03 using BentoML. From here you will need the files `service.py` and `bentofile.yaml` located in the `/src`, from where you should run:
+```bash
+$ bento build
+$ bento containerize `tag`
+```
+You'll get the `tag` after running `bento build` command.
+If you want to run the container, run:
+```bash
+$ docker run -it --rm -p 3000:3000 `tag`
+```
+After having containerinzing the best model using BentoML, if you want to deploy it on the cloud platform Heroku you can find friendly instructions in this [video](https://youtu.be/quBNcEzDhyA).
+* 
 
 ## How to access the model deployed on the cloud
 
@@ -140,3 +152,4 @@ example_2 = {
   "skin_cancer": 0
 }
 ```
+
