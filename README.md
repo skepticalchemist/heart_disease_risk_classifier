@@ -97,13 +97,20 @@ If you want to run the container, run:
 ```bash
 $ docker run -it --rm -p 3000:3000 `tag`
 ```
+and access the given local address to use it.
+
 After containerizing the best model using BentoML, if you want to deploy it on the cloud platform Heroku you can find friendly instructions in this [video](https://youtu.be/quBNcEzDhyA).
 * 
 
 ## How to access the model deployed on the cloud
 
 You can use the web app to make predictions in two ways:
-1. You can make a request using the python code `/src/predict_on_heroku.py`. You'll find a data example inside the file which you can use to test the app.
+1. You can make a request using the python code `/src/predict_on_heroku.py`. You'll find a data example inside the file which you can use to test the app. Just run:
+   ```bash
+   $ python predict_on_heroku.py
+   ```
+to get the prediction.
+
 2. Access the link https://heart-disease-xgboost.herokuapp.com/
    * on **Service APIs** menu click to expand the `POST` on the right; 
    * click on `Try it out`;
