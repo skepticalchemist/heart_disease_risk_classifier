@@ -1,6 +1,6 @@
 # Heart Disease Risk Classifier
 
-Here you'll find a solution to selecting and training a classification model to predict the risk for heart disease, putting it to a web service using [BentoML](https://www.bentoml.com/) and docker and deploying it on a cloud platform as [Heroku](https://www.heroku.com/).
+Here you'll find a solution to selecting and training a classification model to predict the risk for heart disease, putting it to a web service using [BentoML](https://www.bentoml.com/) and docker, and deploying it on a cloud platform such as [Heroku](https://www.heroku.com/).
 
 This repository is part of my MLzoomcamp Midterm Project. 
 
@@ -25,11 +25,11 @@ The best model was selected from:
 * Gaussian NB
 * Complement NB
 
-First baseline models were obtained without handling the class imbalance, and then news models were build handling class imbalance with class weights. Techiniques like oversampling and/or undersampling were not applied here.
+First baseline models were obtained without handling the class imbalance, and then news models were built handling class imbalance with class weights. Techniques like oversampling and/or undersampling were not applied here.
 
 ## The metrics
 
-Several metrics were calculated but the most useful for this problem were F1, recall and MCC (Matthews correlation coefficient).
+Several metrics were calculated but the most useful for this problem were **F1**, **recall**, and **MCC** (Matthews correlation coefficient).
 
 ## Structure of the repository
 
@@ -60,7 +60,7 @@ The repository has the following file structure:
 * _/model_:
   * contains only the local model, identical to the deployed one
 * _/src_:
-  * contains user defined functions (utility.py), config files and some python scripts
+  * contains user-defined functions (utility.py), config files, and some python scripts
 * _/notebooks_
   * _01_EDA.ipynb_
     * Performs an exploratory data analysis (EDA) using the library [Sweetviz](https://github.com/fbdesignpro/sweetviz)
@@ -89,15 +89,15 @@ The repository has the following file structure:
 * Run and inspect all notebooks from 01 to 03
 * The best model is saved on notebook 03 using BentoML. From here you will need the files `service.py` and `bentofile.yaml` located in the `/src`, from where you should run:
 ```bash
-$ bento build
-$ bento containerize `tag`
+$ bentoml build
+$ bentoml containerize `tag`
 ```
-You'll get the `tag` after running `bento build` command.
+You'll get the `tag` after running `bentoml build` command.
 If you want to run the container, run:
 ```bash
 $ docker run -it --rm -p 3000:3000 `tag`
 ```
-After having containerinzing the best model using BentoML, if you want to deploy it on the cloud platform Heroku you can find friendly instructions in this [video](https://youtu.be/quBNcEzDhyA).
+After containerizing the best model using BentoML, if you want to deploy it on the cloud platform Heroku you can find friendly instructions in this [video](https://youtu.be/quBNcEzDhyA).
 * 
 
 ## How to access the model deployed on the cloud
@@ -105,11 +105,11 @@ After having containerinzing the best model using BentoML, if you want to deploy
 You can use the web app to make predictions in two ways:
 1. You can make a request using the python code `/src/predict_on_heroku.py`. You'll find a data example inside the file which you can use to test the app.
 2. Access the link https://heart-disease-xgboost.herokuapp.com/
-   * On **Service APIs** menu click expand the `POST` menu
-   * Click on `Try it out`
-   * Paste one of the examples bellow (json/dictionary) into the field **Request body**. Pay attention to not use doble curly brackets
-   * Click on `Execute`
-   * Scrool down and look for the prediction on the field **Server response**
+   * on **Service APIs** menu click to expand the `POST` on the right; 
+   * click on `Try it out`;
+   * paste one of the examples below (json/dictionary) into the field **Request body**. Pay attention to not using double curly brackets;
+   * click on `Execute`;
+   * scroll down and look for the prediction on the field **Server response**
 
 ```json
 example_1 = {
