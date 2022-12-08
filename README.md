@@ -102,7 +102,11 @@ and access the given local address to use it.
 After containerizing the best model using BentoML, if you want to deploy it on the cloud platform Heroku you can find friendly instructions in this [video](https://youtu.be/quBNcEzDhyA).
 * 
 
-## How to access the model deployed on the cloud
+## How to access the model deployed on the cloud 
+
+> NOTE: This model has been deployed using a Heroku free      account, a service terminated by Heroku on November 28th, 2022. Due to this, the model can't be accessed anymore as described below. However, I recorded a video accessing it on Heroku when it was available to demonstrate its use.
+
+[![Model on Heroku](./img/heroku_screenshot.jpg)](https://youtu.be/_cun-m0AZE4 "Model on Heroku")
 
 You can use the web app to make predictions in two ways:
 1. You can make a request using the python code `/src/predict_on_heroku.py`. You'll find a data example inside the file which you can use to test the app. Just run:
@@ -111,7 +115,7 @@ You can use the web app to make predictions in two ways:
    ```
 to get the prediction.
 
-2. Access the link https://heart-disease-xgboost.herokuapp.com/
+1. Access the link https://heart-disease-xgboost.herokuapp.com/
    * on **Service APIs** menu click to expand the `POST` on the right; 
    * click on `Try it out`;
    * paste one of the examples below (json/dictionary) into the field **Request body**. Pay attention to not using double curly brackets;
